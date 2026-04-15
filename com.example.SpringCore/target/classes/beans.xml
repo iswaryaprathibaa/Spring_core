@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   
+   
+   
+   <bean id="emp1" class="Hexaware.com.example.SpringCore.Employee">
+   <constructor-arg index="0" value="1001"/>
+   <constructor-arg index="1" value="Sanjayy"/>
+   <constructor-arg index="2" value="1000000.00"/>
+   </bean>
+   
+   <bean id="dept1" class="Hexaware.com.example.SpringCore.Department">
+  <constructor-arg index="0" value="101"/>
+   <constructor-arg index="1" value="Sales"/>
+   <constructor-arg index="2" ref="emp1"/>
+   </bean>
+   
+   <bean id="Engine1" class="Hexaware.com.example.SpringCore.Engine">
+  <property name="engineNo" value="101"/>
+   <property name="engineType" value="hp"/>
+   <property name="cc" value="1499"/>
+   </bean>
+   
+   <bean id="car1" class="Hexaware.com.example.SpringCore.Car">
+   <property name="carId" value="101"/>
+   <property name="carName" value="Bolero"/>
+   <property name="engineobj" ref="Engine1"/>
+   </bean>
+   
+</beans>
+ 
