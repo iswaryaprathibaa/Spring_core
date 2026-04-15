@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+    <bean id="College1" class="Hexaware.SpringCollections.College">
+  <property name="collegeId" value="101"/>
+   <property name="collegeName" value="IIT"/>
+   <property name="departments" ><list>
+   <value> CSE </value>
+<value> IT </value>
+<value> ECE </value>
+ 
+<value> MECH  </value>
+</list></property>
+<property name="subjects" ><set>
+   <value> DBMS </value>
+<value> React</value>
+<value> Spring boot</value>
+ 
+<value> Java  </value>
+</set></property>
+
+<property name="marks">
+<map>
+<entry key="1" value="45.00"/>
+<entry key="2" value="75.00"/>
+<entry key="3" value="98.00"/>
+<entry key="4" value="75.87"/>
+</map>
+</property>
+   </bean>
+   
+   <bean id="item1" class="Hexaware.SpringCollections.Items" scope="singleton">
+   <property name="itemId" value="101"/>
+    <property name="itemName" value="Tripod"/>
+   </bean>
+   <bean id="item2" class="Hexaware.SpringCollections.Items" scope="prototype">
+   <property name="itemId" value="102"/>
+    <property name="itemName" value="Pen"/>
+   </bean>
+  
+  
+  <bean id="dept1" class="Hexaware.SpringCollections.Department">
+  <property name="deptId" value="101"/>
+  <property name="deptName" value="Marketing"/>
+ <property  name="e1" > 
+<bean class="Hexaware.SpringCollections.Employee">
+            <property name="empId" value="1001"/>
+            <property name="empName" value="Ajay"/>
+        </bean>
+  </property>
+</bean >
+
+<bean id="emp1" class="Hexaware.SpringCollections.Employee" init-method="start" destroy-method="stop" >
+<property name="empId" value="230"/>
+<property name="empName" value="Ashok"/>
+</bean> 
+   </beans>
